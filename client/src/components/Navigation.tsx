@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -24,6 +24,7 @@ export function Navigation() {
   };
 
   const navLinks = [
+    { name: "Home", id: "hero" },
     { name: "About", id: "about" },
     { name: "Skills", id: "skills" },
     { name: "Experience", id: "experience" },
@@ -42,10 +43,10 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold hover-elevate active-elevate-2 px-3 py-2 rounded-md"
+            className="hover-elevate active-elevate-2 p-2 rounded-md"
             data-testid="button-home"
           >
-            Kirti Jhala
+            <Code2 className="h-7 w-7 text-primary" />
           </button>
 
           <div className="hidden md:flex items-center gap-1">

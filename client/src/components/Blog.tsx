@@ -3,45 +3,50 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, Share2, Clock } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import blogImage1 from "@assets/stock_images/technology_coding_pr_01f73814.jpg";
 import blogImage2 from "@assets/stock_images/technology_coding_pr_8fa5cb27.jpg";
 import blogImage3 from "@assets/stock_images/web_application_dash_aee29e23.jpg";
 
 export function Blog() {
+  const [, setLocation] = useLocation();
   const [blogPosts, setBlogPosts] = useState([
     {
-      id: 1,
-      title: "Building Scalable MERN Applications",
-      excerpt: "Learn how to architect and build scalable full-stack applications using the MERN stack with best practices and real-world examples.",
+      id: "commerce-to-code",
+      category: "Career",
+      title: "My Journey from Commerce to Full-Stack Development",
+      excerpt: "How I transitioned from a commerce background to becoming a MERN stack developer, and the lessons I learned along the way.",
       image: blogImage1,
-      readingTime: 8,
+      readingTime: 5,
       likes: 42,
       shares: 15,
-      date: "2025-01-15",
+      date: "2025-09-02",
     },
     {
-      id: 2,
-      title: "Optimizing React Performance",
-      excerpt: "Discover techniques to improve your React application's performance, from component optimization to effective state management strategies.",
+      id: "building-cricklink",
+      category: "Projects",
+      title: "Building CrickLink: Connecting Cricket Communities",
+      excerpt: "The story behind creating a platform that brings together cricket players, teams, and tournament organizers.",
       image: blogImage2,
-      readingTime: 6,
+      readingTime: 8,
       likes: 38,
       shares: 12,
-      date: "2025-01-10",
+      date: "2025-09-10",
     },
     {
-      id: 3,
-      title: "From Commerce to Code: My Journey",
-      excerpt: "A personal story about transitioning from a commerce background to becoming a full-stack developer and the lessons learned along the way.",
+      id: "react-performance",
+      category: "Tech",
+      title: "Optimizing React Performance: Tips and Tricks",
+      excerpt: "Practical techniques I used to reduce load times by 25% in production applications.",
       image: blogImage3,
-      readingTime: 5,
+      readingTime: 6,
       likes: 56,
       shares: 24,
-      date: "2025-01-05",
+      date: "2025-09-24",
     },
   ]);
 
-  const handleLike = (id: number) => {
+  const handleLike = (id: string) => {
     setBlogPosts(posts =>
       posts.map(post =>
         post.id === id ? { ...post, likes: post.likes + 1 } : post
@@ -49,7 +54,7 @@ export function Blog() {
     );
   };
 
-  const handleShare = (id: number) => {
+  const handleShare = (id: string) => {
     setBlogPosts(posts =>
       posts.map(post =>
         post.id === id ? { ...post, shares: post.shares + 1 } : post
@@ -78,14 +83,17 @@ export function Blog() {
               </div>
               
               <CardHeader className="flex-1">
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                <Badge variant="outline" className="w-fit mb-2 text-xs">
+                  {post.category}
+                </Badge>
+                <h3 className="text-lg font-semibold mb-2 line-clamp-2">{post.title}</h3>
+                <p className="text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground mt-3">
                   <Clock className="h-3 w-3" />
                   <span>{post.readingTime} min read</span>
                   <span>•</span>
                   <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2 line-clamp-2">{post.title}</h3>
-                <p className="text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
               </CardHeader>
               
               <CardFooter className="flex items-center justify-between gap-4 pt-0">
@@ -107,7 +115,12 @@ export function Blog() {
                     <span data-testid={`text-shares-${post.id}`}>{post.shares}</span>
                   </button>
                 </div>
-                <Button variant="ghost" size="sm" data-testid={`button-read-more-${post.id}`}>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => setLocation(`/blog/${post.id}`)}
+                  data-testid={`button-read-more-${post.id}`}
+                >
                   Read More
                 </Button>
               </CardFooter>

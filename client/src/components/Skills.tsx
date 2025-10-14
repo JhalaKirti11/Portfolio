@@ -24,7 +24,7 @@ export function Skills() {
     },
     {
       category: "Tools & Others",
-      skills: ["Git", "Agile", "Swing", "Laravel"],
+      skills: ["Postman", "VS Code", "Chrome DevTools"],
       color: "bg-chart-5/10 text-chart-5 border-chart-5/20",
     },
   ];

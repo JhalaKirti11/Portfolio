@@ -22,18 +22,18 @@ export function Projects() {
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Bootstrap", "JWT"],
     },
     {
-      title: "AfroCargo",
-      description: "A responsive cargo delivery platform focused on booking, tracking, and delivery management with seamless UI/UX.",
-      image: project2,
+      title: "Jukebox",
+      description: "Console-based Java music streaming application with JDBC connectivity for organizing songs and managing playlists.",
+      image: project5,
       highlights: [
-        "Collaborated with Laravel backend team",
-        "Built reusable React components",
-        "Optimized for cross-browser compatibility",
+        "MySQL database integration",
+        "User-friendly interface for music management",
+        "Persistent playlist management",
       ],
-      tech: ["React.js", "Next.js", "TypeScript", "Laravel", "Bootstrap"],
+      tech: ["Java", "MySQL", "JDBC"],
     },
     {
-      title: "Casino Top",
+      title: "CasinoTop",
       description: "Clean and user-friendly UI for an online gaming platform with interactive features and seamless user experience.",
       image: project3,
       highlights: [
@@ -53,17 +53,6 @@ export function Projects() {
         "Optimized frontend performance",
       ],
       tech: ["Next.js", "React.js", "RESTful APIs"],
-    },
-    {
-      title: "Jukebox",
-      description: "Console-based Java music streaming application with JDBC connectivity for organizing songs and managing playlists.",
-      image: project5,
-      highlights: [
-        "MySQL database integration",
-        "User-friendly Swing interface",
-        "Persistent playlist management",
-      ],
-      tech: ["Java", "MySQL", "JDBC", "Swing"],
     },
   ];
 

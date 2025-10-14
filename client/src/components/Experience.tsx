@@ -9,14 +9,14 @@ export function Experience() {
       icon: Briefcase,
       title: "MERN Stack Developer",
       company: "Web N Soft Solutions",
-      period: "Feb 2025 - Oct 2025",
+      period: "Feb 2025 - Oct 2025 (9 months)",
       achievements: [
         "Contributed to full-stack web application development using React.js, Node.js, Express.js, and MongoDB",
         "Integrated RESTful APIs, improving data handling and communication between frontend and backend systems",
         "Optimized component rendering and enhanced UI performance, reducing load times by 25%",
-        "Participated in code reviews and applied Agile methodologies to improve development efficiency",
+        "Participated in code reviews to improve development efficiency",
       ],
-      skills: ["React.js", "Node.js", "Express.js", "MongoDB", "Git"],
+      skills: ["React.js", "Node.js", "Express.js", "MongoDB"],
     },
     {
       type: "training",
@@ -26,11 +26,11 @@ export function Experience() {
       period: "May 2024 - Feb 2025",
       achievements: [
         "Learned Java fundamentals and MERN stack development through project-based learning",
-        "Applied best practices in clean coding, debugging, and version control (Git)",
+        "Applied best practices in clean coding, debugging, and version control",
         "Collaborated in team projects, improving communication and problem-solving skills",
         "Built a strong understanding of end-to-end web application architecture",
       ],
-      skills: ["Java", "MERN Stack", "Git", "Agile"],
+      skills: ["Java", "MERN Stack"],
     },
   ];
 
