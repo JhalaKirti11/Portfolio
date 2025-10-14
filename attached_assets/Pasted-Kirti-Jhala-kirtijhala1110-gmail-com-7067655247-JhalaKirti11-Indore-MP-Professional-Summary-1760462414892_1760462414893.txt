@@ -1,0 +1,96 @@
+Kirti Jhala
+# kirtijhala1110@gmail.com  7067655247 ð JhalaKirti11 + Indore, MP
+Professional Summary
+Motivated and detail-oriented Full-Stack Developer passionate about building efficient and user-
+friendly applications. Eager to contribute to innovative development processes while continuously
+enhancing technical skills and exploring new technologies.
+Experience
+Web N Soft Solutions, MERN Stack Developer
+• Contributed to full-stack web application development using Re-
+act.js, Node.js, Express.js, and MongoDB.
+• Collaborated with designers and backend developers to build re-
+sponsive and user-friendly interfaces, ensuring seamless UX.
+• Integrated RESTful APIs, improving data handling and communica-
+tion between frontend and backend systems.
+• Optimized component rendering and enhanced UI performance,
+reducing load times by 25%.
+• Strengthened expertise in Git-based workflows, version control, and
+collaborative development practices.
+• Participated in code reviews and applied Agile methodologies to
+improve development efficiency and maintainability.
+Feb.2025 – Oct.2025
+Training & Certifications
+InfoBeans Foundation
+• Learned Java fundamentals and MERN stack development through
+project-based learning.
+• Applied best practices in clean coding, debugging, and version con-
+trol (Git).
+• Collaborated in team projects, improving communication and problem-
+solving skills.
+• Built a strong understanding of end-to-end web application archi-
+tecture.
+May.2024 - Feb.2025
+Education
+Bachelor of Commerce
+Devi Ahilya Vishwavidyalaya
+Indore (MP)
+2018 – 2021
+12th - 80.66%
+Jawahar Navodaya Vidyalaya
+Sehore (MP)
+2017 – 2018
+1
+10th - 8.2 (CGPA)
+Jawahar Navodaya Vidyalaya
+Sehore (MP)
+2015 – 2016
+Projects
+CrickLink – Local Cricket Networking Platform
+• Developed a full-stack web application that connects local cricket players, teams, and tourna-
+ment organizers for better coordination and engagement.
+• Built secure user authentication and authorization using JWT with distinct roles for Players and
+Organizers.
+• Designed dynamic dashboards with React.js and Bootstrap for tournament management and
+player onboarding.
+• Created RESTful APIs with Node.js and Express.js to handle tournament creation, team regis-
+tration, and player search.
+• Designed MongoDB schema for efficiently managing player profiles, team information, and tour-
+nament & match data.
+AfroCargo – Cargo Delivery Web Application
+• Developed a responsive and user-friendly cargo delivery platform focused on booking, tracking,
+and delivery management.
+• Collaborated with the backend team working on Laravel APIs to ensure seamless data flow and
+UI consistency across modules.
+• Built reusable React components and optimized frontend performance for cross-browser com-
+patibility.
+• Technologies Used: Laravel, React.js, Next.js, TypeScript, Bootstrap, RESTful APIs, Payment
+Gateway, Axios, Git
+Casino Top
+• Designed and developed a clean, responsive, and user-friendly UI for an online gaming plat-
+form.
+• Implemented interactive frontend features such as toggle buttons, dropdowns, modals, and
+form validations.
+• Focused on component reusability, cross-browser compatibility, and seamless user experience.
+• Technologies Used: React.js, Next.js, JavaScript, HTML5, CSS, Bootstrap
+Gondli – Fitness & Wellness Web Application
+• Developed a responsive platform offering wellness services, including yoga, meditation, diet
+plans, and exercise routines.
+• Built engaging and reusable UI components with Next.js to enhance accessibility, usability, and
+user experience.
+• Integrated REST APIs to dynamically fetch content such as meditation guides, yoga sessions,
+and diet plans.
+• Optimized frontend performance, ensured cross-browser compatibility, and implemented clean
+component architecture.
+• Collaborated with the team to manage frontend logic, data flow, and seamless API integration
+2
+using Next.js features like SSR/CSR and API routes.
+Jukebox – Compiler-Based Java Music Streaming Application
+• Developed a console-based music streaming application to organize songs and manage playlists.
+• Implemented JDBC connectivity with MySQL to fetch, store, and manage song metadata and
+user data.
+• Built a user-friendly interface using Swing with modular design and persistent playlist manage-
+ment.
+• Technologies Used: Core Java, MySQL, JDBC, Swing
+Skills
+Languages: JavaScript, Core Java, HTML, CSS
+Technologies: Node.js, Express.js, React.js, MongoDB, MySQL, JDBC, Bootstrap, Tailwind CSS
