@@ -2,11 +2,11 @@ import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import project1 from "@assets/stock_images/web_application_dash_b66a79fb.jpg";
-import project2 from "@assets/stock_images/web_application_dash_b04c9b43.jpg";
+import project1 from "@assets/stock_images/cricklink.jpg";
+// import project2 from "@assets/stock_images/web_application_dash_b04c9b43.jpg";
 import project3 from "@assets/stock_images/web_application_dash_aee29e23.jpg";
 import project4 from "@assets/stock_images/technology_coding_pr_02f210a3.jpg";
-import project5 from "@assets/stock_images/technology_coding_pr_8fa5cb27.jpg";
+import project5 from "@assets/stock_images/jukebox.jpg";
 
 export function Projects() {
   const projects = [

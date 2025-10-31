@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, Heart, Share2, Calendar } from "lucide-react";
 import { useState } from "react";
-import blogImage1 from "@assets/stock_images/technology_coding_pr_01f73814.jpg";
-import blogImage2 from "@assets/stock_images/technology_coding_pr_8fa5cb27.jpg";
+import blogImage1 from "@assets/stock_images/sdlc.jpg";
+import blogImage2 from "@assets/stock_images/22.png";
 import blogImage3 from "@assets/stock_images/web_application_dash_aee29e23.jpg";
 
 const blogData = {
@@ -449,7 +449,7 @@ export default function BlogPost() {
             <img
               src={post.image}
               alt={post.title}
-              className="w-full h-full object-cover"
+              className="object-cover"
               data-testid="img-blog-featured"
             />
           </div>

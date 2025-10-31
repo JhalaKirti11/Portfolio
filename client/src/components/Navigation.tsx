@@ -2,10 +2,14 @@ import { useState, useEffect } from "react";
 import { Menu, X, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "./ThemeProvider";
+import logoLight from "@assets/stock_images/logo9.png";
+import logoDark from "@assets/stock_images/logo3.png";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,18 +39,22 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => scrollToSection("hero")}
-            className="hover-elevate active-elevate-2 p-2 rounded-md"
+            className=""
             data-testid="button-home"
           >
-            <Code2 className="h-7 w-7 text-primary" />
+            {/* <Code2 className="h-7 w-7 text-primary" /> */}
+            <img
+              src={theme === "dark" ? logoLight : logoDark}
+              alt="title"
+              className="w-12 rounded-full"
+            />
           </button>
 
           <div className="hidden md:flex items-center gap-1">

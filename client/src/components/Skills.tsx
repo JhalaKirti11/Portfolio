@@ -4,7 +4,7 @@ export function Skills() {
   const skillCategories = [
     {
       category: "Languages",
-      skills: ["JavaScript", "TypeScript", "Java", "HTML", "CSS"],
+      skills: ["JavaScript", "Java", "HTML", "CSS"],
       color: "bg-chart-1/10 text-chart-1 border-chart-1/20",
     },
     {
@@ -24,7 +24,7 @@ export function Skills() {
     },
     {
       category: "Tools & Others",
-      skills: ["Postman", "VS Code", "Chrome DevTools"],
+      skills: ["Postman", "VS Code", "GitHub"],
       color: "bg-chart-5/10 text-chart-5 border-chart-5/20",
     },
   ];

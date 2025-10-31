@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Heart, Share2, Clock } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
-import blogImage1 from "@assets/stock_images/technology_coding_pr_01f73814.jpg";
-import blogImage2 from "@assets/stock_images/technology_coding_pr_8fa5cb27.jpg";
+import blogImage1 from "@assets/stock_images/sdlc.jpg";
+import blogImage2 from "@assets/stock_images/22.png";
 import blogImage3 from "@assets/stock_images/web_application_dash_aee29e23.jpg";
 
 export function Blog() {
