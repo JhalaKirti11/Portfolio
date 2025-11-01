@@ -3,7 +3,7 @@ import { createServer, type Server } from "node:http";
 import { storage } from "./storage";
 import { db } from "./db";
 import { blogPosts, insertBlogPostSchema } from "@shared/schema";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 
@@ -48,8 +48,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Blogs
   app.get("/api/blogs", async (_req: Request, res: Response) => {
     if (!db) return res.json([]);
-    const rows = await db.select().from(blogPosts);
-    return res.json(rows);
+    try {
+      const rows = await db.select().from(blogPosts);
+      return res.json(rows);
+    } catch (error) {
+      console.error("Database error:", error);
+      return res.json([]);
+    }
   });
 
   app.post("/api/blogs", requireAdmin, async (req: Request, res: Response) => {
@@ -116,6 +121,81 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(204).end();
     },
   );
+
+  // Get single blog post by slug (must come before /like and /share routes)
+  app.get("/api/blogs/:slug", async (req: Request, res: Response) => {
+    if (!db) return res.status(503).json({ message: "DB not configured" });
+    try {
+      const slug = req.params.slug;
+      const [post] = await db
+        .select()
+        .from(blogPosts)
+        .where(eq(blogPosts.slug, slug))
+        .limit(1);
+      if (!post) return res.status(404).json({ message: "Not found" });
+      return res.json(post);
+    } catch (error) {
+      console.error("Database error:", error);
+      return res.status(503).json({ message: "Database connection error" });
+    }
+  });
+
+  // Toggle like for a blog post by slug (public endpoint)
+  app.patch("/api/blogs/:slug/like", async (req: Request, res: Response) => {
+    if (!db) return res.status(503).json({ message: "DB not configured" });
+    try {
+      const slug = req.params.slug;
+      const { action } = (req.body || {}) as { action?: "like" | "unlike" };
+      
+      // Get current post to check likes count
+      const [post] = await db
+        .select()
+        .from(blogPosts)
+        .where(eq(blogPosts.slug, slug))
+        .limit(1);
+      
+      if (!post) return res.status(404).json({ message: "Not found" });
+      
+      // Determine increment or decrement based on action
+      const increment = action === "like" ? 1 : action === "unlike" ? -1 : 1;
+      const newLikes = Math.max(0, post.likes + increment);
+      
+      const [updated] = await db
+        .update(blogPosts)
+        .set({
+          likes: newLikes,
+          updatedAt: new Date(),
+        })
+        .where(eq(blogPosts.slug, slug))
+        .returning();
+      
+      return res.json(updated);
+    } catch (error) {
+      console.error("Database error:", error);
+      return res.status(503).json({ message: "Database connection error" });
+    }
+  });
+
+  // Increment shares for a blog post by slug (public endpoint)
+  app.patch("/api/blogs/:slug/share", async (req: Request, res: Response) => {
+    if (!db) return res.status(503).json({ message: "DB not configured" });
+    try {
+      const slug = req.params.slug;
+      const [updated] = await db
+        .update(blogPosts)
+        .set({
+          shares: sql`${blogPosts.shares} + 1`,
+          updatedAt: new Date(),
+        })
+        .where(eq(blogPosts.slug, slug))
+        .returning();
+      if (!updated) return res.status(404).json({ message: "Not found" });
+      return res.json(updated);
+    } catch (error) {
+      console.error("Database error:", error);
+      return res.status(503).json({ message: "Database connection error" });
+    }
+  });
 
   const httpServer = createServer(app);
 

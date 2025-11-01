@@ -53,7 +53,7 @@ export function Navigation() {
             <img
               src={theme === "dark" ? logoLight : logoDark}
               alt="title"
-              className="w-12 rounded-full"
+              className="w-12 rounded-xl"
             />
           </button>
 
